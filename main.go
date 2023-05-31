@@ -6,6 +6,7 @@ import (
 
 	"github.com/Pedrommb91/go-img-scrapper/internal/args"
 	"github.com/Pedrommb91/go-img-scrapper/internal/commands"
+	"github.com/Pedrommb91/go-img-scrapper/internal/commands/scrapers"
 )
 
 func main() {
@@ -30,7 +31,7 @@ func main() {
 	}
 
 	for _, s := range args.Scrape {
-		err := commands.NewScraper(s).Scrape()
+		err := scrapers.NewHTMLScraper(s).Scrape()
 		if err != nil {
 			fmt.Println(err)
 		}
